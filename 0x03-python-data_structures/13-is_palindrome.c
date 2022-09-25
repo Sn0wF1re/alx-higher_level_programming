@@ -52,21 +52,18 @@ int is_palindrome(listint_t **head)
 	}
 	reverse_list(&half);
 
-	if (half)
+	while (half && temp)
 	{
-		while (half && temp)
+		if (temp->n == half->n)
 		{
-			if (temp->n == half->n)
-			{
-				temp = temp->next;
-				half = half->next;
-			}
-			else
-				return (0);
+			temp = temp->next;
+			half = half->next;
 		}
-		return (1);
+		else
+			return (0);
 	}
 	if (!half)
 		return (1);
+
 	return (0);
 }
