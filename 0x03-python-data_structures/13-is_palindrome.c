@@ -34,10 +34,10 @@ int is_palindrome(listint_t **head)
 	listint_t *temp = *head;
 	listint_t *half = NULL;
 
-	if (*head != NULL || (*head)->next != NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 
-	while (1)
+	while (fast_ptr != NULL && fast_ptr->next != NULL)
 	{
 		fast_ptr = fast_ptr->next->next;
 		if (!fast_ptr)
