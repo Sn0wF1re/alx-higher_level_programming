@@ -10,7 +10,7 @@ def roman_to_int(roman_string):
         if roms.get(roman_string[i], 0) == 0:
             return (0)
 
-        if (i != len(roman_string) - 1 and
+        if (i != (len(roman_string) - 1) and
         roms[roman_string[i]] < roms[roman_string[i+1]]):
             result += roms[roman_string[i]] * -1
 
