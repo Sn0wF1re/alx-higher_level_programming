@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Make a class square"""
+"""Make a class square."""
 
 
 class Square:
@@ -9,7 +9,7 @@ class Square:
         """Initialize the new square.
 
         Args:
-            size (int): size of new square.
+            size (int): Size of the new square.
         """
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
