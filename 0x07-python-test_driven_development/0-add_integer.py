@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Creates a function to add 2 integers"""
 
+
 def add_integer(a, b=98):
     """Returns an integer after addition of a and b
 
