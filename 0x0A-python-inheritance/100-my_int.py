@@ -12,4 +12,3 @@ class MyInt(int):
     def __ne__(self, value):
         """inverts != with =="""
         return (self.real == value)
-
