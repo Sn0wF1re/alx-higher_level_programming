@@ -1,5 +1,5 @@
 #!/usr/bini/python3
-"""Creates function inherits_from"""
+"""Creates a function"""
 
 
 def inherits_from(obj, a_class):
