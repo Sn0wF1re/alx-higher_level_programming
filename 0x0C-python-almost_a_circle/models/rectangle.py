@@ -75,3 +75,8 @@ class Rectangle(Base):
         print("\n" * self.y,  end="")
         print((" " * self.x + "#" * self.__width + '\n')
               * self.__height, end="")
+
+    def __str__(self):
+        """String representation overriding Base class"""
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
+                f"{self.__width}/{self.__height}")
