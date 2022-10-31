@@ -23,6 +23,13 @@ class Base:
         else:
             return (json.dumps(list_dictionaries))
 
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns list of json string representation"""
+        if not json_string or json_string is None:
+            return("[]")
+        return (json.loads(json_string))
+
     @classmethod
     def save_to_file(cls, list_objs):
         """Writes JSON string representation of list_objs to a file"""
