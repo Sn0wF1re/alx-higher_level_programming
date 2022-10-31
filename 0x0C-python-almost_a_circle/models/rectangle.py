@@ -80,3 +80,32 @@ class Rectangle(Base):
         """String representation overriding Base class"""
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
                 f"{self.__width}/{self.__height}")
+
+    def update(self, *args, **kwargs):
+        """Assigns an argument to each attribute"""
+        if args and len(args):
+            i = 0
+            for item in args:
+                if i == 0:
+                    if item is not None:
+                        self.id = item
+                    else:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                if i == 1:
+                    self.width = item
+                if i == 2:
+                    self.height = item
+                if i == 3:
+                    self.x = item
+                if i == 4:
+                    self.y = item
+                i += 1
+        elif kwargs and len(kwargs):
+            for k, v in kwargs.items():
+                if k == 'id':
+                    if v is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = v
+                if hasattr(self, k):
+                    setattr(self, k, v)
