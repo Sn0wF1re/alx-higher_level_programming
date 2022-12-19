@@ -7,6 +7,6 @@ if (process.argv.length === 2 || process.argv.length === 3) {
   for (let i = 2; i < process.argv.length; i++) {
     numList[i - 2] = Number(process.argv[i]);
   }
-  ordered = numList.sort().reverse();
-  console.log(ordered[1]);
+  numList.sort().reverse();
+  console.log(numList[1]);
 }
