@@ -1,6 +1,6 @@
 #!/usr/bin/node
 // searches second biggest integer in list of args
-if (process.argv.length === 2 || process.argv.length === 3) {
+if (process.argv.length < 4) {
   console.log(0);
 } else {
   const numList = [];
