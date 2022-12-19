@@ -1,12 +1,13 @@
 #!/usr/bin/node
-// searches second biggest integer in list of args
+
 if (process.argv.length < 4) {
-  console.log(0);
+  console.log('0');
 } else {
-  const numList = [];
-  for (let i = 2; i < process.argv.length; i++) {
-    numList[i - 2] = Number(process.argv[i]);
+  const size = process.argv.length;
+  const ints = [];
+  for (let i = 2; i < size; i++) {
+    ints[i - 2] = parseInt(process.argv[i]);
   }
-  numList.sort().reverse();
-  console.log(numList[1]);
+  ints.sort(function (a, b) { return b - a; });
+  console.log(ints[1]);
 }
