@@ -1,9 +1,8 @@
 #!/usr/bin/node
-//prints a message depending of the number of arguments passed
-argLength = process.argv.length;
-if (argLength === 2) {
+
+if (process.argv.length === 2) {
   console.log('No argument');
-} else if (argLength === 3) {
+} else if (process.argv.length === 3) {
   console.log('Argument found');
 } else {
   console.log('Arguments found');
