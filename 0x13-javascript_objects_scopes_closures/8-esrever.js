@@ -1,9 +1,9 @@
 #!/usr/bin/node
 
 exports.esrever = function (list) {
-  let myArray = [];
+  let myList = [];
   for (let i = list.length - 1; i >= 0; i--) {
-    myArray.push(list[i]);
+    myList.push(list[i]);
   }
-  return myArray;
+  return myList;
 };
