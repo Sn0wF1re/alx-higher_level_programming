@@ -16,3 +16,4 @@ if __name__ == '__main__':
     session = Session()
     updateState = session.query(State).filter_by(id=2)
     updateState.name = "New Mexico"
+    session.commit()
