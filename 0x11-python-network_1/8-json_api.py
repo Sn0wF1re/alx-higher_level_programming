@@ -12,19 +12,15 @@ Otherwise:
         Display No result if the JSON is empty
         You must use the package requests and sys
 """
-if __name__ == "__main__":
-    import requests
-    from sys import argv
-
-    url = "https://0.0.0.0:5000/search_user"
-    payload = {'q': argv[1] if len(argv) > 1 else ""}
-    r = requests.post(url, data=payload)
-
+if __name__ == '__main__':
+    url = "http://0.0.0.0:5000/search_user"
+    data = {"q": argv[1][0] if len(argv) > 1 else ""}
+    response = requests.post(url, data=data)
     try:
-        response = r.json()
-        if not response:
+        d = response.json()
+        if not d:
             print("No result")
         else:
-            print(f"{[response.get('id')]} {response.get('name')}")
+            print("[{}] {}".format(d.get("id"), d.get("name")))
     except ValueError:
         print("Not a valid JSON")
