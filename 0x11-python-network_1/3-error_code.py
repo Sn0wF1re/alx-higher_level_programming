@@ -6,14 +6,12 @@ and displays the body of the response (decoded in utf-8)
 
 
 if __name__ == "__main__":
-    from urllib.request import Request, urlopen
-    from urllib.error import URLError
+    import urllib.request as request
+    from urllib.error import HTTPError
     from sys import argv
 
-    req = Request(argv[1])
     try:
-        with urlopen(req) as response:
+        with request.urlopen(argv[1]) as response:
             print(response.read().decode('utf-8'))
-    except URLError as e:
-        if hasattr(e, 'code'):
-            print("Error code: ", e.code)
+    except HTTPError as e:
+        print("Error code: ", e.code)
